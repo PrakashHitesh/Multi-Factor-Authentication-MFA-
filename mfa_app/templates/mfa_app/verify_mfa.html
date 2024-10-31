@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify MFA</title>
+</head>
+<body>
+    <h1>Verify Multi-Factor Authentication</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="token">Enter the MFA token from your authenticator app:</label>
+        <input type="text" id="token" name="token" required>
+        <button type="submit">Verify Token</button>
+    </form>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

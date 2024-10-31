@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setup MFA</title>
+</head>
+<body>
+    <h1>Multi-Factor Authentication Setup</h1>
+    <p>Scan this QR code with your authenticator app:</p>
+    <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+    <p>After scanning the QR code, <a href="{% url 'verify_mfa' %}">click here to verify your MFA token</a>.</p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'mfa_app/styles.css' %}">
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <div class="link">
+        <p>Don’t have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+    </div>
+</div>
+</body>
+</html>
